@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA6E42C7-B168-4C8E-B1BD-777552580847}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QR2SHP</RootNamespace>
+    <AssemblyName>QR2SHP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeLib\c.cs" />
+    <Compile Include="ShapeLib\dbfopen.cs" />
+    <Compile Include="ShapeLib\shapefil.cs" />
+    <Compile Include="ShapeLib\shpopen.cs" />
+    <Compile Include="ShapeLib\shprecord.cs" />
+    <Compile Include="ShapeLib\shptree.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="zxing_new\aztec\AztecDetectorResult.cs" />
+    <Compile Include="zxing_new\aztec\AztecReader.cs" />
+    <Compile Include="zxing_new\aztec\AztecResultMetadata.cs" />
+    <Compile Include="zxing_new\aztec\AztecWriter.cs" />
+    <Compile Include="zxing_new\aztec\decoder\Decoder.cs" />
+    <Compile Include="zxing_new\aztec\detector\Detector.cs" />
+    <Compile Include="zxing_new\aztec\encoder\AztecCode.cs" />
+    <Compile Include="zxing_new\aztec\encoder\AztecEncodingOptions.cs" />
+    <Compile Include="zxing_new\aztec\encoder\BinaryShiftToken.cs" />
+    <Compile Include="zxing_new\aztec\encoder\Encoder.cs" />
+    <Compile Include="zxing_new\aztec\encoder\HighLevelEncoder.cs" />
+    <Compile Include="zxing_new\aztec\encoder\SimpleToken.cs" />
+    <Compile Include="zxing_new\aztec\encoder\State.cs" />
+    <Compile Include="zxing_new\aztec\encoder\Token.cs" />
+    <Compile Include="zxing_new\BarcodeFormat.cs" />
+    <Compile Include="zxing_new\BarcodeReader.Bitmap.cs" />
+    <Compile Include="zxing_new\BarcodeReaderCustom.cs" />
+    <Compile Include="zxing_new\BarcodeReaderGeneric.cs" />
+    <Compile Include="zxing_new\BarcodeWriter.Bitmap.cs" />
+    <Compile Include="zxing_new\BarcodeWriter.PixelData.cs" />
+    <Compile Include="zxing_new\BarcodeWriter.SvgImage.cs" />
+    <Compile Include="zxing_new\BarcodeWriterCustom.cs" />
+    <Compile Include="zxing_new\BarcodeWriterGeneric.cs" />
+    <Compile Include="zxing_new\BaseLuminanceSource.cs" />
+    <Compile Include="zxing_new\Binarizer.cs" />
+    <Compile Include="zxing_new\BinaryBitmap.cs" />
+    <Compile Include="zxing_new\BitmapLuminanceSource.cs" />
+    <Compile Include="zxing_new\common\BigInteger\Base10BigInteger.cs" />
+    <Compile Include="zxing_new\common\BigInteger\BigInteger.cs" />
+    <Compile Include="zxing_new\common\BigInteger\BigIntegerException.cs" />
+    <Compile Include="zxing_new\common\BigInteger\Sign.cs" />
+    <Compile Include="zxing_new\common\BitArray.cs" />
+    <Compile Include="zxing_new\common\BitMatrix.cs" />
+    <Compile Include="zxing_new\common\BitMatrix.Drawing.cs" />
+    <Compile Include="zxing_new\common\BitSource.cs" />
+    <Compile Include="zxing_new\common\CharacterSetECI.cs" />
+    <Compile Include="zxing_new\common\DecoderResult.cs" />
+    <Compile Include="zxing_new\common\DecodingOptions.cs" />
+    <Compile Include="zxing_new\common\DefaultGridSampler.cs" />
+    <Compile Include="zxing_new\common\DetectorResult.cs" />
+    <Compile Include="zxing_new\common\detector\MathUtils.cs" />
+    <Compile Include="zxing_new\common\detector\MonochromeRectangleDetector.cs" />
+    <Compile Include="zxing_new\common\detector\WhiteRectangleDetector.cs" />
+    <Compile Include="zxing_new\common\ECI.cs" />
+    <Compile Include="zxing_new\common\EncodingOptions.cs" />
+    <Compile Include="zxing_new\common\GlobalHistogramBinarizer.cs" />
+    <Compile Include="zxing_new\common\GridSampler.cs" />
+    <Compile Include="zxing_new\common\HybridBinarizer.cs" />
+    <Compile Include="zxing_new\common\PerspectiveTransform.cs" />
+    <Compile Include="zxing_new\common\reedsolomon\GenericGF.cs" />
+    <Compile Include="zxing_new\common\reedsolomon\GenericGFPoly.cs" />
+    <Compile Include="zxing_new\common\reedsolomon\ReedSolomonDecoder.cs" />
+    <Compile Include="zxing_new\common\reedsolomon\ReedSolomonEncoder.cs" />
+    <Compile Include="zxing_new\common\StringUtils.cs" />
+    <Compile Include="zxing_new\datamatrix\DataMatrixReader.cs" />
+    <Compile Include="zxing_new\datamatrix\DataMatrixWriter.cs" />
+    <Compile Include="zxing_new\datamatrix\decoder\BitMatrixParser.cs" />
+    <Compile Include="zxing_new\datamatrix\decoder\DataBlock.cs" />
+    <Compile Include="zxing_new\datamatrix\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="zxing_new\datamatrix\decoder\Decoder.cs" />
+    <Compile Include="zxing_new\datamatrix\decoder\Version.cs" />
+    <Compile Include="zxing_new\datamatrix\detector\Detector.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\ASCIIEncoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\Base256Encoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\C40Encoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\DatamatrixEncodingOptions.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\DataMatrixSymbolInfo144.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\DefaultPlacement.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\EdifactEncoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\Encodation.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\Encoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\EncoderContext.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\ErrorCorrection.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\HighLevelEncoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\SymbolInfo.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\SymbolShapeHint.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\TextEncoder.cs" />
+    <Compile Include="zxing_new\datamatrix\encoder\X12Encoder.cs" />
+    <Compile Include="zxing_new\DecodeHintType.cs" />
+    <Compile Include="zxing_new\Dimension.cs" />
+    <Compile Include="zxing_new\EncodeHintType.cs" />
+    <Compile Include="zxing_new\FormatException.cs" />
+    <Compile Include="zxing_new\IBarcodeReader.Bitmap.cs" />
+    <Compile Include="zxing_new\IBarcodeReader.cs" />
+    <Compile Include="zxing_new\IBarcodeReader.Multiple.Bitmap.cs" />
+    <Compile Include="zxing_new\IBarcodeReader.Multiple.cs" />
+    <Compile Include="zxing_new\IBarcodeReaderCustom.cs" />
+    <Compile Include="zxing_new\IBarcodeReaderCustom.Multiple.cs" />
+    <Compile Include="zxing_new\IBarcodeReaderGeneric.cs" />
+    <Compile Include="zxing_new\IBarcodeReaderGeneric.Multiple.cs" />
+    <Compile Include="zxing_new\IBarcodeWriter.Bitmap.cs" />
+    <Compile Include="zxing_new\IBarcodeWriter.cs" />
+    <Compile Include="zxing_new\IBarcodeWriter.PixelData.cs" />
+    <Compile Include="zxing_new\IBarcodeWriter.SvgImage.cs" />
+    <Compile Include="zxing_new\IBarcodeWriterCustom.cs" />
+    <Compile Include="zxing_new\IBarcodeWriterGeneric.cs" />
+    <Compile Include="zxing_new\imb\IMBReader.cs" />
+    <Compile Include="zxing_new\InvertedLuminanceSource.cs" />
+    <Compile Include="zxing_new\LuminanceSource.cs" />
+    <Compile Include="zxing_new\maxicode\decoder\BitMatrixParser.cs" />
+    <Compile Include="zxing_new\maxicode\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="zxing_new\maxicode\decoder\Decoder.cs" />
+    <Compile Include="zxing_new\maxicode\MaxiCodeReader.cs" />
+    <Compile Include="zxing_new\MultiFormatReader.cs" />
+    <Compile Include="zxing_new\MultiFormatWriter.cs" />
+    <Compile Include="zxing_new\multi\ByQuadrantReader.cs" />
+    <Compile Include="zxing_new\multi\GenericMultipleBarcodeReader.cs" />
+    <Compile Include="zxing_new\multi\MultipleBarcodeReader.cs" />
+    <Compile Include="zxing_new\multi\qrcode\detector\MultiDetector.cs" />
+    <Compile Include="zxing_new\multi\qrcode\detector\MultiFinderPatternFinder.cs" />
+    <Compile Include="zxing_new\multi\qrcode\QRCodeMultiReader.cs" />
+    <Compile Include="zxing_new\net2.0\Action.cs" />
+    <Compile Include="zxing_new\net2.0\Func.cs" />
+    <Compile Include="zxing_new\net2.0\TimeZoneInfo.cs" />
+    <Compile Include="zxing_new\oned\CodaBarReader.cs" />
+    <Compile Include="zxing_new\oned\CodaBarWriter.cs" />
+    <Compile Include="zxing_new\oned\Code128EncodingOptions.cs" />
+    <Compile Include="zxing_new\oned\Code128Reader.cs" />
+    <Compile Include="zxing_new\oned\Code128Writer.cs" />
+    <Compile Include="zxing_new\oned\Code39Reader.cs" />
+    <Compile Include="zxing_new\oned\Code39Writer.cs" />
+    <Compile Include="zxing_new\oned\Code93Reader.cs" />
+    <Compile Include="zxing_new\oned\Code93Writer.cs" />
+    <Compile Include="zxing_new\oned\EAN13Reader.cs" />
+    <Compile Include="zxing_new\oned\EAN13Writer.cs" />
+    <Compile Include="zxing_new\oned\EAN8Reader.cs" />
+    <Compile Include="zxing_new\oned\EAN8Writer.cs" />
+    <Compile Include="zxing_new\oned\EANManufacturerOrgSupport.cs" />
+    <Compile Include="zxing_new\oned\ITFReader.cs" />
+    <Compile Include="zxing_new\oned\ITFWriter.cs" />
+    <Compile Include="zxing_new\oned\MSIReader.cs" />
+    <Compile Include="zxing_new\oned\MSIWriter.cs" />
+    <Compile Include="zxing_new\oned\MultiFormatOneDReader.cs" />
+    <Compile Include="zxing_new\oned\MultiFormatUPCEANReader.cs" />
+    <Compile Include="zxing_new\oned\OneDimensionalCodeWriter.cs" />
+    <Compile Include="zxing_new\oned\OneDReader.cs" />
+    <Compile Include="zxing_new\oned\PlesseyWriter.cs" />
+    <Compile Include="zxing_new\oned\rss\AbstractRSSReader.cs" />
+    <Compile Include="zxing_new\oned\rss\DataCharacter.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\BitArrayBuilder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AbstractExpandedDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI013103decoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01320xDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01392xDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01393xDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI013x0x1xDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI013x0xDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01AndOtherAIs.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01decoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AI01weightDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\AnyAIDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\BlockParsedResult.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\CurrentParsingState.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\DecodedChar.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\DecodedInformation.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\DecodedNumeric.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\DecodedObject.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\FieldParser.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\decoders\GeneralAppIdDecoder.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\ExpandedPair.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\ExpandedRow.cs" />
+    <Compile Include="zxing_new\oned\rss\expanded\RSSExpandedReader.cs" />
+    <Compile Include="zxing_new\oned\rss\FinderPattern.cs" />
+    <Compile Include="zxing_new\oned\rss\Pair.cs" />
+    <Compile Include="zxing_new\oned\rss\RSS14Reader.cs" />
+    <Compile Include="zxing_new\oned\rss\RSSUtils.cs" />
+    <Compile Include="zxing_new\oned\UPCAReader.cs" />
+    <Compile Include="zxing_new\oned\UPCAWriter.cs" />
+    <Compile Include="zxing_new\oned\UPCEANExtension2Support.cs" />
+    <Compile Include="zxing_new\oned\UPCEANExtension5Support.cs" />
+    <Compile Include="zxing_new\oned\UPCEANExtensionSupport.cs" />
+    <Compile Include="zxing_new\oned\UPCEANReader.cs" />
+    <Compile Include="zxing_new\oned\UPCEANWriter.cs" />
+    <Compile Include="zxing_new\oned\UPCEReader.cs" />
+    <Compile Include="zxing_new\oned\UPCEWriter.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\BarcodeMetadata.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\BarcodeValue.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\BoundingBox.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\Codeword.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\DetectionResult.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\DetectionResultColumn.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\DetectionResultRowIndicatorColumn.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\ec\ErrorCorrection.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\ec\ModulusGF.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\ec\ModulusPoly.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\PDF417CodewordDecoder.cs" />
+    <Compile Include="zxing_new\pdf417\decoder\PDF417ScanningDecoder.cs" />
+    <Compile Include="zxing_new\pdf417\detector\Detector.cs" />
+    <Compile Include="zxing_new\pdf417\detector\PDF417DetectorResult.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\BarcodeMatrix.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\BarcodeRow.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\Compaction.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\Dimensions.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\PDF417.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\PDF417EncodingOptions.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\PDF417ErrorCorrection.cs" />
+    <Compile Include="zxing_new\pdf417\encoder\PDF417HighLevelEncoder.cs" />
+    <Compile Include="zxing_new\pdf417\PDF417Common.cs" />
+    <Compile Include="zxing_new\pdf417\PDF417Reader.cs" />
+    <Compile Include="zxing_new\pdf417\PDF417ResultMetadata.cs" />
+    <Compile Include="zxing_new\pdf417\PDF417Writer.cs" />
+    <Compile Include="zxing_new\PlanarYUVLuminanceSource.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\BitMatrixParser.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\DataBlock.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\DataMask.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\DecodedBitStreamParser.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\Decoder.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\ErrorCorrectionLevel.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\FormatInformation.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\Mode.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\QRCodeDecoderMetaData.cs" />
+    <Compile Include="zxing_new\qrcode\decoder\Version.cs" />
+    <Compile Include="zxing_new\qrcode\detector\AlignmentPattern.cs" />
+    <Compile Include="zxing_new\qrcode\detector\AlignmentPatternFinder.cs" />
+    <Compile Include="zxing_new\qrcode\detector\Detector.cs" />
+    <Compile Include="zxing_new\qrcode\detector\FinderPattern.cs" />
+    <Compile Include="zxing_new\qrcode\detector\FinderPatternFinder.cs" />
+    <Compile Include="zxing_new\qrcode\detector\FinderPatternInfo.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\BlockPair.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\ByteMatrix.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\Encoder.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\MaskUtil.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\MatrixUtil.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\QRCode.cs" />
+    <Compile Include="zxing_new\qrcode\encoder\QrCodeEncodingOptions.cs" />
+    <Compile Include="zxing_new\qrcode\QRCodeReader.cs" />
+    <Compile Include="zxing_new\qrcode\QRCodeWriter.cs" />
+    <Compile Include="zxing_new\Reader.cs" />
+    <Compile Include="zxing_new\ReaderException.cs" />
+    <Compile Include="zxing_new\renderer\BitmapRenderer.cs" />
+    <Compile Include="zxing_new\renderer\IBarcodeRenderer.cs" />
+    <Compile Include="zxing_new\renderer\PixelData.Bitmap.cs" />
+    <Compile Include="zxing_new\renderer\PixelData.cs" />
+    <Compile Include="zxing_new\renderer\PixelDataRenderer.cs" />
+    <Compile Include="zxing_new\renderer\SVGRenderer.cs" />
+    <Compile Include="zxing_new\Result.cs" />
+    <Compile Include="zxing_new\ResultMetadataType.cs" />
+    <Compile Include="zxing_new\ResultPoint.cs" />
+    <Compile Include="zxing_new\ResultPointCallback.cs" />
+    <Compile Include="zxing_new\RGBLuminanceSource.cs" />
+    <Compile Include="zxing_new\SupportClass.cs" />
+    <Compile Include="zxing_new\Writer.cs" />
+    <Compile Include="zxing_new\WriterException.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
